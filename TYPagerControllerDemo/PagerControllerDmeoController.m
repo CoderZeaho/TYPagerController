@@ -38,6 +38,8 @@
 - (void)addTabPageBar {
     TYTabPagerBar *tabBar = [[TYTabPagerBar alloc]init];
     tabBar.layout.barStyle = TYPagerBarStyleProgressElasticView;
+    tabBar.layout.progressWidth = 60;
+    tabBar.layout.progressGradientColors = @[[UIColor colorWithRed:0.01 green:0.80 blue:1.00 alpha:1.00], [UIColor colorWithRed:0.24 green:0.99 blue:0.90 alpha:1.00]];
     tabBar.dataSource = self;
     tabBar.delegate = self;
     [tabBar registerClass:[TYTabPagerBarCell class] forCellWithReuseIdentifier:[TYTabPagerBarCell cellIdentifier]];

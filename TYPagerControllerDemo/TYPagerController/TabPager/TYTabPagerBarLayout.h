@@ -38,6 +38,7 @@ typedef NS_ENUM(NSUInteger, TYPagerBarStyle) {
 @property (nonatomic, assign) CGFloat progressRadius;   // height/2
 @property (nonatomic, assign) CGFloat progressBorderWidth;
 @property (nonatomic, strong, nullable) UIColor *progressBorderColor;
+@property (nonatomic, strong) NSArray<UIColor *> *progressGradientColors;
 
 @property (nonatomic, assign) CGFloat progressHorEdging; // default 6, if < 0 width + edge ,if >0 width - edge
 @property (nonatomic, assign) CGFloat progressVerEdging; // default 0, cover style is 3.

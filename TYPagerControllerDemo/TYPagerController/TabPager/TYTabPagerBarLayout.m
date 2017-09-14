@@ -66,6 +66,17 @@
     _pagerTabBar.progressView.layer.borderColor = progressBorderColor.CGColor;
 }
 
+- (void)setProgressGradientColors:(NSArray<UIColor *> *)progressGradientColors {
+    _progressGradientColors = progressGradientColors;
+    CAGradientLayer *shadeLayer = [CAGradientLayer layer];
+    shadeLayer.frame = CGRectMake(0, 0, _progressWidth, _progressHeight);
+    shadeLayer.startPoint = CGPointMake(0.0f, 0.0f);
+    shadeLayer.endPoint = CGPointMake(1.0f, 0.0f);
+    shadeLayer.colors = @[(__bridge id)[_progressGradientColors firstObject].CGColor,(__bridge id)[_progressGradientColors lastObject].CGColor];
+    shadeLayer.type = kCAGradientLayerAxial;
+    [[[_pagerTabBar progressView] layer] addSublayer:shadeLayer];
+}
+
 - (void)setProgressColor:(UIColor *)progressColor {
     _progressColor = progressColor;
     _pagerTabBar.progressView.backgroundColor = progressColor;
